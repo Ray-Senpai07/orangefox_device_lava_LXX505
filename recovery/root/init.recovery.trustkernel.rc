@@ -1,0 +1,42 @@
+on fs
+    mkdir /mnt/vendor 0755 system system
+    mkdir /mnt/vendor/persist 0771 system system
+    mkdir /mnt/vendor/protect_f 0770 system system
+    mount ext4 /dev/block/by-name/persist /mnt/vendor/persist ro wait
+    mount ext4 /dev/block/by-name/protect1 /mnt/vendor/protect_f ro wait
+    exec u:r:recovery:s0 root root -- /system/bin/sh /vendor/bin/trustkernel.twrp.sh
+    install_keyring
+    start teed
+
+service teed /vendor/bin/teed \
+    --datapath /data/vendor/t6/fs \
+    --sptapath /data/vendor/t6/app \
+    --systapath /vendor/app/t6 \
+    --rpmbdev /dev/mmcblk0rpmb \
+    --rpmbdev /dev/rpmb0 \
+    --prot /tmp/t6_twrp \
+    --prot /tmp/tee_twrp \
+    --prebuilt /vendor/app/t6/data \
+    --logpath /tmp/tkcore.log \
+    --proprefix vendor.trustkernel
+    capabilities SYS_RAWIO
+    user root
+    group root system
+    disabled
+    seclabel u:r:recovery:s0
+
+service vendor.keymaster-4-1-trustkernel /vendor/bin/hw/android.hardware.keymaster@4.1-service.trustkernel
+    user root
+    group root drmrpc
+    disabled
+    seclabel u:r:recovery:s0
+
+service vendor.gatekeeper-1-0 /vendor/bin/hw/android.hardware.gatekeeper@1.0-service
+    user root
+    group root
+    disabled
+    seclabel u:r:recovery:s0
+
+on property:hwservicemanager.ready=true
+    start vendor.keymaster-4-1-trustkernel
+    start vendor.gatekeeper-1-0

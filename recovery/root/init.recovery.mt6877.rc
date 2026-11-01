@@ -1,3 +1,4 @@
+import /init.recovery.trustkernel.rc
 import /mtk-plpath-utils.rc
 
 on boot
@@ -14,7 +15,7 @@ on init
 
     setprop sys.usb.configfs 1
     setprop sys.usb.controller "musb-hdrc"
-    setprop sys.usb.ffs.aio_compat 0
+    setprop sys.usb.ffs.aio_compat 1
 
 on fs && property:ro.debuggable=0
     # distinguish USB shoulde connect or not, i.e. CDP vs SDP
@@ -67,19 +68,19 @@ service mtk.plpath.utils.link /system/bin/mtk_plpath_utils
     seclabel u:r:recovery:s0
 
 on property:vendor.sys.listener.registered=true
-    start vendor.gatekeeper-1
+    start vendor.gatekeeper-1-0
 
 on property:ro.crypto.state=encrypted && property:ro.crypto.type=file
     install_keyring
 
 on property:hwservicemanager.ready=true
-    start vendor.gatekeeper-1
+    start vendor.gatekeeper-1-0
 
 on property:ro.crypto.state=unsupported
-    stop vendor.gatekeeper-1
+    stop vendor.gatekeeper-1-0
 
 on property:ro.crypto.state=unencrypted
-    stop vendor.gatekeeper-1
+    stop vendor.gatekeeper-1-0
 
 on property:twrp.decrypt.done=true
-    stop vendor.gatekeeper-1
+    stop vendor.gatekeeper-1-0
