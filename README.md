@@ -1,13 +1,8 @@
 <div align="center">
 
-<img src="https://wiki.orangefox.tech/banner.svg" width="420" alt="OrangeFox Recovery"/>
-
-# OrangeFox Recovery for Lava Blaze Curve 5G
-
-**Codename: `LXX505`** · MediaTek Dimensity 7050 (MT6877) · Android 14
+<img src="images/banner.svg" width="100%" alt="OrangeFox Recovery for Lava Blaze Curve 5G (LXX505)"/>
 
 [![OrangeFox Build](https://github.com/Ray-Senpai07/orangefox_device_lava_LXX505/actions/workflows/ofox.yml/badge.svg)](https://github.com/Ray-Senpai07/orangefox_device_lava_LXX505/actions/workflows/ofox.yml)
-[![TWRP Build](https://github.com/Ray-Senpai07/orangefox_device_lava_LXX505/actions/workflows/twrp.yml/badge.svg)](https://github.com/Ray-Senpai07/orangefox_device_lava_LXX505/actions/workflows/twrp.yml)
 ![Status](https://img.shields.io/badge/status-unofficial-orange)
 ![Decryption](https://img.shields.io/badge/FBE%20decryption-working-brightgreen)
 
