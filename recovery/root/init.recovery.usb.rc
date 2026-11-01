@@ -40,14 +40,14 @@ on post-fs
 
 on boot
     setprop sys.usb.configfs 1
-    setprop sys.usb.controller "musb-hdrc"
+    setprop sys.usb.controller "usb0"
     setprop sys.usb.ffs.aio_compat 1
     write /sys/class/android_usb/android0/f_mtp/cpu_mask 0x80
     write /sys/module/usb_f_mtp/parameters/mtp_rx_cont 1
     write /sys/module/block/parameters/events_dfl_poll_msecs 1000
     
     # FORCE MTP+ADB TO OVERRIDE THE BROKEN GHOST PROPERTY IN /DATA
-    setprop sys.usb.config mtp,adb
+    setprop sys.usb.config adb
 
 on property:init.svc.adbd=stopped
     setprop sys.usb.ffs.ready 0
