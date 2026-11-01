@@ -59,7 +59,6 @@ PRODUCT_PACKAGES += \
     vendor.mediatek.hardware.keymaster_attestation@1.1 \
     android.hardware.gatekeeper@1.0-impl \
     gatekeeper.default \
-    kmsetkey.beanpod \
     libSoftGatekeeper
 
 # Health Hal
@@ -91,6 +90,3 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.system.keystore2 \
 
-# Otacert
-PRODUCT_EXTRA_RECOVERY_KEYS += \
-    $(DEVICE_PATH)/security/LXX505_releasekey

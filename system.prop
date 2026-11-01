@@ -11,10 +11,8 @@ ro.crypto.dm_default_key.options_format.version=2
 ro.crypto.volume.options=::v2
 
 # MTK
-ro.mediatek.platform=MT6833
-ro.vendor.mtk_trustonic_tee_support=1
+ro.mediatek.platform=MT6877
 ro.vendor.mtk_tee_gp_support=1
-ro.vendor.mtk_microtrust_tee_support=1
 
 # USB
 ro.sys.usb.bicr=no
@@ -24,10 +22,10 @@ ro.sys.usb.storage.type=mtp
 persist.sys.usb.config=mtp,adb
 
 # Gatekeeper
-ro.hardware.gatekeeper=beanpod
+ro.hardware.gatekeeper=trustkernel
 
 # Kmsetkey
-ro.hardware.kmsetkey=beanpod
+ro.hardware.kmsetkey=trustkernel
 
 # Keymaster
 keymaster_ver=4.1

@@ -20,7 +20,7 @@
 
 # Standard MediaTek Partitions 
 /logo			emmc		/dev/block/by-name/logo			flags=display="Logo";backup=1;flashimg=1
-/expdb    ext4    /dev/block/by-name/expdb    flags=display="expdb";backup=1
+/expdb    emmc    /dev/block/by-name/expdb    flags=display="expdb";backup=1
 
 # Dynamic Partition Images (For flashing GSIs)
 /system_image		emmc		/dev/block/mapper/system	flags=display="System Image";slotselect;backup=1;flashimg=1
@@ -29,5 +29,3 @@
 /product_image		emmc		/dev/block/mapper/product	flags=display="Product Image";slotselect;backup=1;flashimg=1
 
 # Removable Storage
-/external_sd		vfat		/dev/block/mmcblk0p1	/dev/block/mmcblk0	flags=display="MicroSD Card";storage;wipeingui;removable
-/usb_otg    auto    /dev/block/sdd1    /dev/block/sdd    flags=display="USB-Storage";storage;wipeingui;removable
