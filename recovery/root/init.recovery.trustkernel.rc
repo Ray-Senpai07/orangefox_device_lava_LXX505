@@ -9,22 +9,25 @@ on fs
     mkdir /tmp/t6 0770 root system
     mkdir /tmp/t6/fs 0770 root system
     mkdir /tmp/t6/app 0770 root system
+    chown system system /dev/tkcoredrv
+    chmod 0660 /dev/tkcoredrv
+    chown system system /dev/rpmb0
+    chmod 0660 /dev/rpmb0
     start teed
 
 service teed /vendor/bin/teed \
     --datapath /tmp/t6/fs \
     --sptapath /tmp/t6/app \
     --systapath /vendor/app/t6 \
-    --rpmbdev /dev/mmcblk0rpmb \
     --rpmbdev /dev/rpmb0 \
     --prot /tmp/t6_twrp \
     --prot /tmp/tee_twrp \
     --prebuilt /vendor/app/t6/data \
-    --logpath /tmp/tkcore.log \
+    --logpath /tmp/t6/tkcore.log \
     --proprefix vendor.trustkernel
     capabilities SYS_RAWIO
-    user root
-    group root system
+    user system
+    group system
     disabled
     seclabel u:r:recovery:s0
 
