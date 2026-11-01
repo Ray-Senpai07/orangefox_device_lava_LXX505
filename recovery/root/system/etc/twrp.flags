@@ -29,3 +29,4 @@
 /product_image		emmc		/dev/block/mapper/product	flags=display="Product Image";slotselect;backup=1;flashimg=1
 
 # Removable Storage
+/usb_otg        auto    /dev/block/sdd1    /dev/block/sdd    flags=display="USB OTG";storage;removable

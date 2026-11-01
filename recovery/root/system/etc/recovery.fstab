@@ -33,10 +33,10 @@ product /product ext4 ro wait,slotselect,avb,logical,first_stage_mount
 #/dev/block/by-name/persist /mnt/vendor/persist ext4 noatime,nosuid,nodev,noauto_da_alloc,commit=1,nodelalloc wait,check,formattable
 
 
-/devices/platform/externdevice* auto auto defaults voldmanaged=sdcard1:auto,encryptable=userdata
+#/devices/platform/externdevice* auto auto defaults voldmanaged=sdcard1:auto,encryptable=userdata
 
 
-/devices/platform/usb0* auto vfat defaults voldmanaged=usbotg:auto
+#/devices/platform/usb0* auto vfat defaults voldmanaged=usbotg:auto
 
 
 
