@@ -153,6 +153,7 @@ TW_HAS_MTP := true
 TW_EXCLUDE_TWRPAPP := true
 TW_EXCLUDE_PYTHON := true
 TW_EXCLUDE_APEX := true
+TW_EXCLUDE_TZDATA := true
 TW_PREPARE_DATA_MEDIA_EARLY := true
 TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
 TARGET_USE_CUSTOM_LUN_FILE_PATH := "/config/usb_gadget/g1/functions/mass_storage.usb0/lun.%d/file"
