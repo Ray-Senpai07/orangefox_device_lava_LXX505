@@ -28,8 +28,9 @@
 | 📱 | Boots Android normally with OrangeFox installed | ✅ |
 | 🔋 | Battery status | ✅ |
 | 📂 | MTP | ⚠️ works, but switches ADB off (re-enable in **ADB & Sideload**) |
+| 🧩 | `lptools` (resize dynamic partitions from the terminal) | ✅ included |
+| 🛠️ | TWRP build from the same tree | ✅ |
 | ⚡ | Fastbootd | ❓ untested |
-| 📦 | Flashing ZIPs / ROMs | ❓ untested |
 
 ## 📥 Installation
 
@@ -117,6 +118,7 @@ Output: `out/target/product/LXX505/boot.img`
 - [**ayusc**](https://github.com/ayusc/orangefox_device_lava_LXX503): Lava Blaze 5G (LXX503) tree this one is based on
 - [**ADeadTrousers**](https://github.com/ADeadTrousers/twrp_device_Unihertz_Atom_LXL): TrustKernel recovery reference
 - [**SebaUbuntu**](https://github.com/twrpdtgen/twrpdtgen): twrpdtgen
+- [**Claude**](https://claude.ai) (Anthropic): helped with the bring-up: adapting the tree to MT6877, debugging USB, TrustKernel decryption and boot-image size, and writing the build scripts
 
 <div align="center">
 
